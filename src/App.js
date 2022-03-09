@@ -1,6 +1,17 @@
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const Login = lazy(() => import('./pages/login.js'));
+
 function App() {
-  return (   
-    <p>Hello Azeez Jim</p>
+  return (
+    <Router>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Switch>
+          <Route path="/login" component={Login} />
+        </Switch>
+      </Suspense>
+    </Router>
   );
 }
 
