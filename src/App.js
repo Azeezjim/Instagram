@@ -1,7 +1,7 @@
-import { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-const Login = lazy(() => import('./pages/login.js'));
+const Login = lazy(() => import('./pages/login'));
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
           <Route path="/login" component={Login} />
         </Switch>
       </Suspense>
+      <p>pages</p>
     </Router>
   );
 }
