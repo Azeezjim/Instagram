@@ -12,6 +12,7 @@ function App() {
           <Route path={ROUTES.LOGIN} component={Login} />
         </Switch>
       </Suspense>
+      <p className='text-blue-500'>Welcome</p>
     </Router>
   );
 }
