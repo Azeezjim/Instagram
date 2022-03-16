@@ -24,7 +24,7 @@ export default function Signup() {
     const usernameExist = doseUsernameExist(userName);
     console.log('usernameExixt', usernameExist?.[0])
 
-    if(usernameExist?.[0] === false) {
+    if(!usernameExist.length) {
     }
       try { 
         const createNewResult = await firebase
@@ -110,7 +110,7 @@ export default function Signup() {
           aria-label="password"
           placeholder="Passsword"
           className="text-sm text-gray-base w-full py-5 px-4 h-2 bordeer border-gray-primary rounded mb-2"
-          onChange={({target}) => setPasswords('t.v', target.value) } 
+          onChange={({target}) => setPasswords( target.value) } 
           value= {password}
           />
           <button 
