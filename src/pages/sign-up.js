@@ -25,7 +25,6 @@ export default function Signup() {
     console.log('usernameExixt', usernameExist?.[0])
 
     if(!usernameExist.length) {
-    }
       try { 
         const createNewResult = await firebase
         .auth()
@@ -53,10 +52,10 @@ export default function Signup() {
         setPasswords('');
         setError(error.message);
       }
-      // else {   
-      //   setError('THat usernmae is already taken, please try another ')
-      // }
-  };
+    } else {   
+        setError('THat usernmae is already taken, please try another ')
+      }
+    }
 
   useEffect(() => {
     document.title = "Log up Instagram"
