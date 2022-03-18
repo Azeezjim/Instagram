@@ -60,7 +60,7 @@ export default function Login() {
           aria-label="password"
           placeholder="Passsword"
           className="text-sm text-gray-base w-full py-5 px-4 h-2 bordeer border-gray-primary rounded mb-2"
-          onChange={({target}) => setPasswords('t.v', target.value) } 
+          onChange={({target}) => setPasswords( target.value) } 
           value= {password}
           />
           <button 

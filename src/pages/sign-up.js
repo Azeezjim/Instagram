@@ -21,28 +21,32 @@ export default function Signup() {
   const handleSignUp = async (event) => {
     event.preventDefault();
 
-    const usernameExist = doseUsernameExist(userName);
+    const usernameExist = await doseUsernameExist(userName);
     console.log('usernameExixt', usernameExist?.[0])
 
-    if(!usernameExist) {
+    if(!usernameExist?.[0]) {
       try { 
-        const createNewResult = await firebase
+        const createdUserResult = await firebase
         .auth()
         .createUserWithEmailAndPassword(emailAdress, password);
+        console.log("createdUserResult", createdUserResult);
         // authentication 
         // email address & password & username (displayname)
-        await createNewResult.user.updatePassword( {
-          displayname: userName
+        await createdUserResult.user.updateProfile({
+          displayName: userName  
         });
 
         // firebase user collection ( create a document)
-        await firebase.firestore().collection('users').add({
-          userId: createNewResult.user.uid,
-          username: userName.toLowerCase(),
-          fullName,
-          emailAdress: emailAdress.toLowerCase(),
-          folowing: [],
-          dateCreated: Date.now()
+        await firebase
+          .firestore()
+          .collection('users')
+          .add({
+            userId: createdUserResult.user.uid,
+            username: userName.toLowerCase(),
+            fullName,
+            emailAddress: emailAdress.toLowerCase(),
+            following: [],
+            dateCreated: Date.now()
       });
 
       history.push(ROUTES.DASHBOARD);
@@ -85,7 +89,7 @@ export default function Signup() {
           value= {userName}
           />
 
-<input 
+        <input 
           type="text"
           aria-label="Enter your full nmae"
           placeholder="Full Name"

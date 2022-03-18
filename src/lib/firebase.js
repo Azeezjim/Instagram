@@ -4,7 +4,7 @@ import 'firebase/auth';
 // import { seedDatabase } from '../servicdes/seed';
 
 // import seed file
-import { seedDatabase } from '../seed';
+// import { seedDatabase } from '../seed';
 
 
 const config = {
