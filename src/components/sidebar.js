@@ -1,11 +1,16 @@
 import useUser from '../hooks/use-user'
 
 export default function Sidebar() {
-  return (
+  return ( 
 
-    comnst x = useUser()
-    console.log("x", x);
-    <p>I i'm the sidebar </p>
+    const {
+      user: {fullName, usernmae, userId}
+    } = useUser()
+
+    return <div className='gray'>
+      <User />
+    <Suggestions />
+    </div>
   )
 }  
 
