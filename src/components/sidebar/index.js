@@ -1,4 +1,6 @@
-import useUser from '../hooks/use-user'
+import useUser from '../../hooks/use-user';
+import User from './user';
+import Suggestions from './suggestions.js';
 
 export default function Sidebar() {
 
