@@ -6,13 +6,13 @@ export default function Sidebar() {
 
 
     const {
-      user: {fullName, usernmae, userId}
+      user: {fullName, username, userId}
     } = useUser()
 
     return (
     <div className='gray'>
       <User />
-    <Suggestions />
+    <Suggestions  />
     </div>
   )
 }  

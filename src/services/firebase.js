@@ -13,6 +13,8 @@ export async function doseUsernameExist(userName) {
 
 }
 
+// get user id from the firebase where userId == userID (passed from the auth)
+
 export async function getUserByUserId(userId) {
   const result = await firebase 
   .firestore()
