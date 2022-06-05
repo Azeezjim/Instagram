@@ -11,8 +11,8 @@ export default function Sidebar() {
 
     return (
     <div className='gray'>
-      <User />
-    <Suggestions  />
+      <User username={username} fullName={fullName} />
+    <Suggestions userId={userId} />
     </div>
   )
 }  
