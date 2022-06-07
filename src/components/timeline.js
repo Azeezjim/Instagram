@@ -1,5 +1,7 @@
 export default function Timeline() {
   return (
-    <p>I i'm the timeline </p>
+    <div className="container col-span-2">
+      <p>I i'm the timeline </p>
+    </div>
   )
 }
