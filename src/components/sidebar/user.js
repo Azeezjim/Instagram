@@ -7,7 +7,7 @@ const User = ({ username, fullName }) =>
   !username || !fullName ? (
     <Skeleton count={1} height={61} />
   ) : (
-    <Link to={`/p${username}`} classNam="grid grid-col-4 mb-6 items-center">
+    <Link to={`/p/${username}`} classNam="grid grid-col-4 mb-6 items-center">
       <div className="flex items-center justify-between col-span-1">
         <img
           className="rounded-full w-16 flex mr-3"
@@ -21,6 +21,6 @@ const User = ({ username, fullName }) =>
 export default User;
 
 User.propTypes = {
-  username: PropTypes.string,
-  fullname: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  fullname: PropTypes.string.isRequired
 };
