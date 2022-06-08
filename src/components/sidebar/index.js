@@ -1,8 +1,10 @@
+// import '../../wdyr';
+import React, {memo} from 'react';
 import useUser from '../../hooks/use-user';
 import User from './user';
 import Suggestions from './suggestions.js';
 
-export default function Sidebar() {
+const Sidebar = () => {
 
 
     const {
@@ -17,3 +19,4 @@ export default function Sidebar() {
   )
 }  
 
+export default Sidebar
