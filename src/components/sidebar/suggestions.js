@@ -3,13 +3,15 @@ import PropTypes from 'prop-types'
 import Skeleton from "react-loading-skeleton";
 
 export default function Suggestions ({userId}){
-  const [profile, setProfile] = useState(null)
+  const [profiles, setProfiles] = useState(null)
 
   
 
-  return  !profile ? (
-    <Skeleton coount={10} height={150} className="mt-5" />
-  ) : ( <h1>Hello</h1>)
+  return  !profiles ? (
+    <Skeleton count={1} height={150} className="mt-5" />
+  ) : profiles.length < 0  ? (
+      <div></div>
+  ) : null 
 }
 
 Suggestions.propTypes = {
