@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import PropTypes from 'prop-types'
 import Skeleton from "react-loading-skeleton";
 import { getSuggestedProfiles } from '../../services/firebase'
+import 
 
 export default function Suggestions ({userId, following}) {
   const [profiles, setProfiles] = useState(null)
@@ -25,9 +26,9 @@ export default function Suggestions ({userId, following}) {
         </div>
         <div className="mt-4 grid gap-5 ">
           {profiles.map((profile) => (
-            <suggestedProfile 
+            <SuggestedProfile 
               key={profile.docId}
-              userDocd={profile.docId}
+              userDo  cd={profile.docId}
               username={profile.usernmae}
               profileId={profile.userId}
               userId={userId}
