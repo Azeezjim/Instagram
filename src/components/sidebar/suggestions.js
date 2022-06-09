@@ -3,17 +3,17 @@ import PropTypes from 'prop-types'
 import Skeleton from "react-loading-skeleton";
 import { getSuggestedProfiles } from '../../services/firebase'
 
-export default function Suggestions ({userId}) {
+export default function Suggestions ({userId, following}) {
   const [profiles, setProfiles] = useState(null)
 
   useEffect(() => {
     async function suggestedProfiles() {
-      const response = await getSuggestedProfiles(userId);
-      if (userId) {
-        setProfiles(response)
-      }
+      const response = await getSuggestedProfiles(userId, following);
+      setProfiles(response)
     }
-    suggestedProfiles()
+      if (userId) {
+        suggestedProfiles()
+      }
   }, [userId])
 
   return  !profiles ? (
@@ -23,10 +23,12 @@ export default function Suggestions ({userId}) {
         <div className="text-sm flex items-center justify-between mb-2">
           <p className="flex-bold text-gray-base">Suggestions for you</p>          
         </div>
+        <div></div>
       </div>
   ) : null 
 }
 
 Suggestions.propTypes = {
-  userId: PropTypes.string
+  userId: PropTypes.string,
+  following: PropTypes.array
 }

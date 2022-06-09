@@ -8,13 +8,13 @@ const Sidebar = () => {
 
 
     const {
-      user: {fullName, username, userId}
+      user: {fullName, username, userId, following}
     } = useUser()
 
     return (
     <div className='gray'>
       <User username={username} fullName={fullName} />
-    <Suggestions userId={userId} />
+    <Suggestions userId={userId} following = {following} />
     </div>
   )
 }  
