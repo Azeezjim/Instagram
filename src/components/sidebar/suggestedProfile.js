@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export default function SuggestedProfile({ userDocId, username, profileId, userId}) {
@@ -10,6 +11,9 @@ const [followed, setfollowed] = useState(false)
         <img 
         className="rounded-full w-8 flex mr-3"
         src={`/images/avatars/${username}.jpeg`} alt=""/>
+        <Link to={`/p/${username}`}>
+          <p className="font-bold text-sm">{username}</p>
+        </Link>
       </div>
     </div>
   ) : null
