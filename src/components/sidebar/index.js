@@ -14,7 +14,7 @@ const Sidebar = () => {
     return (
     <div className='gray'>
       <User username={username} fullName={fullName} />
-    <Suggestions userId={userId} following = {following} />
+      <Suggestions userId={userId} following = {following} />
     </div>
   )
 }  
