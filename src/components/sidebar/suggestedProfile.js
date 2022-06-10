@@ -4,7 +4,15 @@ import PropTypes from 'prop-types';
 export default function SuggestedProfile({ userDocId, username, profileId, userId}) {
 const [followed, setfollowed] = useState(false)
 
-  return  !followed ? ()
+  return  !followed ? (
+    <div className="flex-row items-center align-items justify-between">
+      <div className="flex items-center justify-between">
+        <img 
+        className="rounded-full w-8 flex mr-3"
+        src={`/images/avatars/${username}.jpeg`} alt=""/>
+      </div>
+    </div>
+  ) : null
 }
 
 SuggestedProfile.propTypes = {
