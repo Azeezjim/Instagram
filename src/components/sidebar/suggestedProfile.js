@@ -14,7 +14,14 @@ const [followed, setfollowed] = useState(false)
         <Link to={`/p/${username}`}>
           <p className="font-bold text-sm">{username}</p>
         </Link>
-      </div>
+          <button
+            className="text-xs font-bold to-blue-medium"
+            type="button"
+            onClick={() => console.log('follow', 'collow this user')}
+          >
+            Folllow
+          </button>
+       </div>
     </div>
   ) : null
 }
