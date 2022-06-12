@@ -21,7 +21,7 @@ const [followed, setfollowed] = useState(false)
           >
             Folllow
           </button>
-       </div>
+      </div>
     </div>
   ) : null
 }

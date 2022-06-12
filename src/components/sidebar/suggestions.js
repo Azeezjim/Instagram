@@ -29,11 +29,11 @@ export default function Suggestions ({userId, following}) {
           {profiles.map((profile) => {
             console.log("profile", profile)
             return <SuggestedProfile 
-              key={profile.docId}
-              userDo  cd={profile.docId}
-              username={profile.usernmae}
-              profileId={profile.userId}
-              userId={userId}
+              key={profile?.docId}
+              userDocId={profile?.docId}
+              username={profile?.username}
+              profileId={profile?.userId}
+              userId={profile?.userId}
             />
   })}
         </div>
