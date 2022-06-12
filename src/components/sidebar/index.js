@@ -10,7 +10,7 @@ const Sidebar = () => {
     const {
       user: {fullName, username, userId, following}
     } = useUser()
-
+      // console.log("data", fullName, username, userId, following );
     return (
     <div className='gray'>
       <User username={username} fullName={fullName} />

@@ -10,6 +10,7 @@ export default function Suggestions ({userId, following}) {
   useEffect(() => {
     async function suggestedProfiles() {
       const response = await getSuggestedProfiles(userId, following);
+      console.log(response, 'response');
       setProfiles(response)
     }
       if (userId) {

@@ -10,14 +10,14 @@ const [followed, setfollowed] = useState(false)
       <div className="flex items-center justify-between">
         <img 
         className="rounded-full w-8 flex mr-3"
-        src={`/images/avatars/${username}.jpeg`} alt=""/>
+        src={`/images/avatars/${username}.jpg`} alt=""/>
         <Link to={`/p/${username}`}>
           <p className="font-bold text-sm">{username}</p>
         </Link>
           <button
             className="text-xs font-bold to-blue-medium"
             type="button"
-            onClick={() => console.log('follow', 'collow this user')}
+            onClick={() => console.log('follow', 'follow this user')}
           >
             Folllow
           </button>
