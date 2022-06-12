@@ -23,17 +23,18 @@ export default function Suggestions ({userId, following}) {
       <div className="rounded flex flex-col">
         <div className="text-sm flex items-center justify-between mb-2">
           <p className="flex-bold text-gray-base">Suggestions for you</p>          
-        </div>
-        <div className="mt-4 grid gap-5 ">
-          {profiles.map((profile) => (
-            <SuggestedProfile 
+        </div> 
+        <div className="mt-4 grid gap-5 "> 
+          {profiles.map((profile) => {
+            console.log("profile", profile)
+            return <SuggestedProfile 
               key={profile.docId}
               userDo  cd={profile.docId}
               username={profile.usernmae}
               profileId={profile.userId}
               userId={userId}
             />
-          ))}
+  })}
         </div>
       </div>
   ) : null 

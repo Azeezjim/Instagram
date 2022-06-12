@@ -11,7 +11,7 @@ const User = ({ username, fullName }) =>
       <div className="flex items-center justify-between col-span-1">
         <img
           className="rounded-full w-16 flex mr-3"
-          src= {`/images/avatars${username}.jpg`}
+          src= {`/images/avatars/${username}.jpg`}
           alt=""
         />
       </div>
@@ -25,8 +25,8 @@ const User = ({ username, fullName }) =>
 export default memo(User);
 
 User.propTypes = {
-  username: PropTypes.string.isRequired,
-  fullname: PropTypes.string.isRequired
+  username: PropTypes.string,
+  fullname: PropTypes.string
 };
 
 // User.whyDidYouRender = true
