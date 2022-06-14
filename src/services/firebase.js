@@ -48,3 +48,8 @@ export async function getSuggestedProfiles(userId, following) {
 
   return profiles;
 }
+
+export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId) {
+  return firebase
+  .firestore
+}
