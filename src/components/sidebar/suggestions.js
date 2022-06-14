@@ -9,7 +9,7 @@ export default function Suggestions ({userId, following}) {
 
   useEffect(() => {
     async function suggestedProfiles() {
-      const response = await getSuggestedProfiles(userId, following);
+      const response = await getSuggestedProfiles(userId, following, loggedInUserDocId);
       console.log(response, 'response');
       setProfiles(response)
     }
@@ -43,5 +43,6 @@ export default function Suggestions ({userId, following}) {
 
 Suggestions.propTypes = {
   userId: PropTypes.string,
-  following: PropTypes.array
+  following: PropTypes.array,
+  loggedInUserDocId: PropTypes.string
 }
