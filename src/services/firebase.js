@@ -51,9 +51,23 @@ export async function getSuggestedProfiles(userId, following) {
 
 export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId, isFollowwimngPrpfile)  {
   return firebase
-  .firestore
+  .firestore()
   .collection('user')
   .doc(loggedInUserDocId)
+  .update({
+    following: isFollowwimngPrpfile 
+    ? FieldValue.arrayRemove(profileId) 
+    : FieldValue.arrayUnion(profileId)
+  })
+}
+
+
+
+export async function updateLoggedInUserFollowers(profileDocId, profileId, isFollowwimngPrpfile)  {
+  return firebase
+  .firestore()
+  .collection('user')
+  .doc(profileDocId)
   .update({
     following: isFollowwimngPrpfile 
     ? FieldValue.arrayRemove(profileId) 

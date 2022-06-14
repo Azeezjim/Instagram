@@ -30,7 +30,7 @@ export default function Suggestions ({userId, following, loggedInUserDocId}) {
             console.log("profile", profile)
             return <SuggestedProfile 
               key={profile?.docId}
-              spDocId={profile?.docId}
+              profileDocId={profile?.docId}
               username={profile?.username}
               profileId={profile?.userId}
               userId={profile?.userId}
