@@ -8,15 +8,16 @@ const Sidebar = () => {
 
 
     const {
-      user: {fullName, username, userId, following}
+      user: {docId, fullName, username, userId, following}
     } = useUser()
-      // console.log("data", fullName, username, userId, following );
+    console.log("docId", docId)
     return (
     <div className='gray'>
       <User username={username} fullName={fullName} />
-      <Suggestions userId={userId} following = {following} />
+      <Suggestions userId={userId} following = {following} loggedInUserDocId={docId} />
     </div>
   )
 }  
 
 export default Sidebar;
+ 
