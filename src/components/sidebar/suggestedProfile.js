@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default function SuggestedProfile({ userDocId, username, profileId, userId}) {
+export default function SuggestedProfile({ sdDocId, username, profileId, userId, loggedInUserDocId}) {
 const [followed, setfollowed] = useState(false)
 
   async function handleFollowUsers() {
@@ -31,10 +31,9 @@ const [followed, setfollowed] = useState(false)
 }
 
 SuggestedProfile.propTypes = {
-  userDocId: PropTypes.string.isRequired,
+  sdDocId: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   profileId: PropTypes.string.isRequired,
-  userId: PropTypes.string.isRequired
-
-
+  userId: PropTypes.string.isRequired,
+  loggedInUserDocId: PropTypes.string.isRequired
 }
