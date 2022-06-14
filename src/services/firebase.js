@@ -63,14 +63,14 @@ export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId,
 
 
 
-export async function updateLoggedInUserFollowers(profileDocId, profileId, isFollowwimngPrpfile)  {
+export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocId, isFollowwimngPrpfile)  {
   return firebase
   .firestore()
   .collection('user')
   .doc(profileDocId)
   .update({
     following: isFollowwimngPrpfile 
-    ? FieldValue.arrayRemove(profileId) 
-    : FieldValue.arrayUnion(profileId)
+    ? FieldValue.arrayRemove(loggedInUserDocId) 
+    : FieldValue.arrayUnion(loggedInUserDocId)
   })
 }
