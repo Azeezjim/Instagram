@@ -52,7 +52,7 @@ export async function getSuggestedProfiles(userId, following) {
 export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId, isFollowwimngPrpfile)  {
   return firebase
   .firestore()
-  .collection('user')
+  .collection('users')
   .doc(loggedInUserDocId)
   .update({
     following: isFollowwimngPrpfile 
@@ -66,10 +66,10 @@ export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId,
 export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocId, isFollowwimngPrpfile)  {
   return firebase
   .firestore()
-  .collection('user')
+  .collection('users')
   .doc(profileDocId)
   .update({
-    following: isFollowwimngPrpfile 
+    followers: isFollowwimngPrpfile 
     ? FieldValue.arrayRemove(loggedInUserDocId) 
     : FieldValue.arrayUnion(loggedInUserDocId)
   })

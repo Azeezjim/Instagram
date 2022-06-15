@@ -11,7 +11,7 @@ export function seedDatabase(firebase) {
       followers: ['2', '3', '4'],
       dateCreated: Date.now()
     },
-    {
+    { 
       userId: '2',
       username: 'raphael',
       fullName: 'Raffaello Sanzio da Urbino',
