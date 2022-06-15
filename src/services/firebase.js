@@ -58,7 +58,7 @@ export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId,
     following: isFollowwimngPrpfile 
     ? FieldValue.arrayRemove(profileId) 
     : FieldValue.arrayUnion(profileId)
-  })
+  });
 }
 
 
@@ -74,3 +74,4 @@ export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocI
     : FieldValue.arrayUnion(loggedInUserDocId)
   })
 }
+
