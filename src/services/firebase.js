@@ -75,3 +75,7 @@ export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocI
   })
 }
 
+export async function getTimelinePhotos( userId, following) {
+  
+}
+
