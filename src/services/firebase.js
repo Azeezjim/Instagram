@@ -82,9 +82,11 @@ export async function getTimelinePhotos( userId, following) {
   .where('userId', 'in', following)
   .get();
 
-  const userFollowedPhotos = result.map((photo) => ({
+  const userFollowedPhotos = result.doc.map((photo) => ({
     ...photo.data(),
     docId: photo.id
-  }))
+  }));
+
+  const photosWithUserDetales = 
 }
 
