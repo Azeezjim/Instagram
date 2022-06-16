@@ -87,6 +87,17 @@ export async function getTimelinePhotos( userId, following) {
     docId: photo.id
   }));
 
-  const photosWithUserDetales = 
+  const photosWithUserDetales = await Promise.all(
+    userFollowedPhotos.map( async (photo) => {
+      let userLikedPhotos = false;
+    if(photo.likes.includes(userId)) {
+      userLikedPhotos = true; 
+    }
+    const user = await getUserByUserId(photo.userId)    
+    const { username } = user(0)
+    return { username, photo, userLikedPhotos}
+    })
+  );
+  return photosWithUserDetales;
 }
 
