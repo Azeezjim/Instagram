@@ -77,5 +77,8 @@ export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocI
 
 export async function getTimelinePhotos( userId, following) {
   const result = await firebase
+  .firestore()
+  .collection('photos')
+  .where['userId', 'in', following]
 }
 
