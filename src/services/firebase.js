@@ -80,6 +80,11 @@ export async function getTimelinePhotos( userId, following) {
   .firestore()
   .collection('photos')
   .where('userId', 'in', following)
-  .get()
+  .get();
+
+  const userFollowedPhotos = result.map((photo) => ({
+    ...photo.data(),
+    docId: photo.id
+  }))
 }
 
