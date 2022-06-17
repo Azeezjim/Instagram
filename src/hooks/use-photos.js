@@ -5,7 +5,7 @@ import { getUserByUserId, getTimelinePhotos } from "../services/firebase";
 
 export default function usePhotos() {
   const [photos, usePhotos] = useState[null];
-   
+  
   const {
     user: {uid: userId =''
   }
@@ -17,7 +17,7 @@ export default function usePhotos() {
       let followedUserPhotos = []
 
       if (following.length > 0) {
-        followedUserPhotos = await getTimelinePhotos( userId, following)
+        followedUserPhotos = await getTimelinePhotos( userI d, following)
       }
     }
   }, [])
