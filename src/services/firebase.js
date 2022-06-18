@@ -62,7 +62,6 @@ export async function updateLoggedInUserFollowing (loggedInUserDocId, profileId,
 }
 
 
-
 export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocId, isFollowwimngPrpfile)  {
   return firebase
   .firestore()
@@ -75,27 +74,28 @@ export async function updateLoggedInUserFollowers(profileDocId, loggedInUserDocI
   })
 }
 
-export async function getTimelinePhotos( userId, following) {
+export async function getPhotos(userId, following) {
   const result = await firebase
   .firestore()
   .collection('photos')
   .where('userId', 'in', following)
   .get();
 
-  const userFollowedPhotos = result.doc.map((photo) => ({
+  const userFollowedPhotos = result.docs.map((photo) => ({
     ...photo.data(),
     docId: photo.id
   }));
+  // console.log('userFollowedPhotos', userFollowedPhotos);
 
   const photosWithUserDetales = await Promise.all(
-    userFollowedPhotos.map( async (photo) => {
-      let userLikedPhotos = false;
-    if(photo.likes.includes(userId)) {
-      userLikedPhotos = true; 
+    userFollowedPhotos.map(async (photo) => {
+      let userLikedPhotos = false; 
+      if(photo.likes.includes(userId)) {
+        userLikedPhotos = true; 
     }
     const user = await getUserByUserId(photo.userId)    
     const { username } = user(0)
-    return { username, photo, userLikedPhotos}
+    return { username, ...photo, userLikedPhotos}
     })
   );
   return photosWithUserDetales;
