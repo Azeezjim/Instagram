@@ -23,9 +23,10 @@ export default function usePhotos() {
       }
 
       followedUserPhotos.sort((a, b) => b.dadeCreated - a.dadeCreated);
+      setPhotos(followedUserPhotos)
     }
     getTimelinePhotos()
-  }, []);
+  }, [userId]);
 
   return {photos};
 }
