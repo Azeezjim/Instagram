@@ -5,9 +5,9 @@ import { getUserByUserId, getPhotos } from "../services/firebase";
 export default function usePhotos() {
   const [photos, setPhotos] = useState(null);
   
-  const{
-    user: { uid: userId ='' }
-  } = useContext(UserContext);
+  const
+    {user:  { uid: userId ='' } }
+    = useContext(UserContext);
 
   useEffect(() => {
     async function getTimelinePhotos() {
@@ -15,12 +15,17 @@ export default function usePhotos() {
       let followedUserPhotos = [];
 
         // console.log('userFollowedPhotos', userFollowedPhotos);
-      if (following.length > 0) {
+      console.log(
+        'following' , following
+      )
+        if (following.length > 0) {
         followedUserPhotos = await getPhotos( userId, following)
       }
+
+      followedUserPhotos.sort((a, b) => b.dadeCreated - a.dadeCreated);
     }
     getTimelinePhotos()
   }, []);
 
-  return {photos }
+  return {photos};
 }
