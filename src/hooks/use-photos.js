@@ -6,7 +6,7 @@ export default function usePhotos() {
   const [photos, setPhotos] = useState(null);
   
   const {user:  { uid: userId = ''} }
-    = useContext(useContext);
+    = useContext(UserContext);
 
   useEffect(() => {
     async function getTimelinePhotos() {

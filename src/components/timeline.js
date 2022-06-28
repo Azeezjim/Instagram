@@ -10,7 +10,7 @@ export default function Timeline() {
       {!photos ? (
         <>
           {[ ...new Array(4)].map((_, index) => 
-            <Skeleton key={index} count={1} width={320} height={400} />
+            <Skeleton key={index} count={1} width={640} height={600} className='mb-5'/>
           )}
         </>
       ) :  photos?.length > 0 ? (
