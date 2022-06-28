@@ -9,9 +9,9 @@ export default function Timeline() {
     <div className="container col-span-2">
       {!photos ? (
         <>
-          {[ ...new Array(4)].map((_, index) => (
+          {[ ...new Array(4)].map((_, index) => 
             <Skeleton key={index} count={1} width={320} height={400} />
-          ))}
+          )}
         </>
       ) :  photos?.length > 0 ? (
         photos.map((content) => <p key={content.docId}>{content.imageSrc}</p>)
