@@ -57,7 +57,7 @@ export default function Signup() {
         setError(error.message);
       }
     } else {   
-        setError('That usernmae is already taken, please try another ')
+        setError('That username is already taken, please try another ')
       }
     }
 
@@ -83,7 +83,7 @@ export default function Signup() {
         <input 
           type="text"
           aria-label="Enter your username"
-          placeholder="Usernmae"
+          placeholder="username"
           className="text-sm text-gray-base w-full py-5 px-4 h-2 bordeer border-gray-primary rounded mb-2"
           onChange={({target}) => setUserName( target.value) } 
           value= {userName}

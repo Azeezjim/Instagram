@@ -1,8 +1,13 @@
 import { useRef } from 'react'
 import PropTypes from 'prop-types'
+import Header from '../header'
 
 export default function Post ({ contnt }) {
-  return <p>I am a post</p>
+  return (
+    <div>
+      <Header username={contnt.username} />
+    </div>
+  )
 }
 
 Post.propTypes = {
