@@ -5,7 +5,7 @@ export default function Post ({ contnt }) {
   return <p>I am a post</p>
 }
 
-Post.PropTypes = {
+Post.propTypes = {
   content : PropTypes.shape({
     username : PropTypes.string.isRequired,
     imageSrc : PropTypes.string.isRequired,
