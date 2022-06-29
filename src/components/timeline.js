@@ -4,8 +4,9 @@ import Post from "./post/inddex";
 
 export default function Timeline() {
   const { photos } = usePhotos();
+  // console.log('username', content);
   
-  console.log('Photos', photos)
+  // console.log('Photos', photos)
   return (
     <div className="container col-span-2">
       {!photos ? (
